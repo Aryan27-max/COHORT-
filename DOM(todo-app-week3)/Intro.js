@@ -32,7 +32,7 @@
 // 2. querySeclectorAll
 // 3. getElementById
 // 4. getElementByClassName
-// 5. getElementsByClassName
+// 5. getElementsByClassName.
 
 
 
