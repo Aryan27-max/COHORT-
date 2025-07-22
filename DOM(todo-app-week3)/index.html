@@ -6,7 +6,36 @@
             <title>replit</title>
             <link href="style.css" rel="stylesheet" type="text/css"/>
       </head>
-      
+
+      <body>
+            <h1>Todo list</h1>
+            <div>
+                  <div id="todo-1">
+                        <h4>1. Take class</h4>
+                        <button onclick="deleteTodo(1)">delete</button>
+                  </div>
+                  <div id="todo-2">
+                        <h4>2. cook food</h4>
+                        <button onclick="deleteTodo(2)">delete</button>
+                  </div>
+                  <div id="todo-3">
+                        <h4>3. Go to the gym</h4>
+                        <button onclick="deleteTodo(3)">delete</button>
+                  </div>
+            </div>
+            <div>
+                  <input type="text"></input>
+                  <button>Add todo</button>
+            </div>
+      </body>
+
+      <script>
+            function deleteTodo(index){
+                  const element = document.getElementById("todo-"+index);
+                  element.parentNode.removeChild(element);
+            }
+      </script>
+
 </html>
 
 <!--  querySelector - used for specific usecase.
