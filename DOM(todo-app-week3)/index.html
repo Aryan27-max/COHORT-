@@ -1,43 +1,33 @@
-<!DOCTYPE html>
 <html>
-      <head>
-            <meta charset="utf-8">
-            <meta name = "viewport" conetent="width=device-width">
-            <title>replit</title>
-            <link href="style.css" rel="stylesheet" type="text/css"/>
-      </head>
-
       <body>
-            <h1>Todo list</h1>
-            <div>
-                  <div id="todo-1">
-                        <h4>1. Take class</h4>
-                        <button onclick="deleteTodo(1)">delete</button>
-                  </div>
-                  <div id="todo-2">
-                        <h4>2. cook food</h4>
-                        <button onclick="deleteTodo(2)">delete</button>
-                  </div>
-                  <div id="todo-3">
-                        <h4>3. Go to the gym</h4>
-                        <button onclick="deleteTodo(3)">delete</button>
-                  </div>
-            </div>
-            <div>
-                  <input type="text"></input>
-                  <button>Add todo</button>
-            </div>
+            <input type = "text"></input>
+            <button onclick="AddTodo()">Add Todo !</button>
+
+            <script>
+
+                  ctr = 1;
+                  function DeleteTodo(index){
+                        const element = document.getElementById(index);
+                        element.parentNode.removeChild(element);
+                  }
+
+
+                  function AddTodo(){
+                        const inputEl = document.querySelector("input");
+                        const value = inputEl.value;
+
+                        const newDiv = document.createElement("div");
+                        newDiv.setAttribute("id",ctr);
+
+                        newDiv.innerHTML = "<div>" + value + '</div><button onclick = "DeleteTodo('+ ctr +')">Delete</button>';
+
+                        document.querySelector("body").appendChild(newDiv);
+
+                        ctr = ctr + 1; 
+                  }
+            </script>
       </body>
-
-      <script>
-            function deleteTodo(index){
-                  const element = document.getElementById("todo-"+index);
-                  element.parentNode.removeChild(element);
-            }
-      </script>
-
 </html>
-
 <!--  querySelector - used for specific usecase.
       quertSelectorAll - used to select all the usecaes of a specific branch. -->
 
