@@ -1,80 +1,84 @@
 <html>
+      <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Todo List</title>
+            <linkn href = "style.css" rel="stylesheet" type="text/css">
+      </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Todo List</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
+      <body>
+            <h1>Todo list</h1>
+            <div id="todos">
+                  <div id = "todo-1">
+                        <h4>1. go to gym</h4>
+                        <button onclick="DeletTodo(1)">delete</button>
+                  </div>
+                  <div id="todo-2">
+                        <h4>2. go to class</h4>
+                        <button onclick="DeletTodo(2)">Delete</button>
+                  </div>
+            </div>
 
-<body>
-  <h1>Todo list</h1>
-  <div id="todos">
-    <div id="todo-1">
-      <h4>1. Take class</h4>
-      <button onclick="deleteTodo(1)">Delete</button>
-    </div>
-    <div id="todo-2">
-      <h4>2. Go out to eat</h4>
-      <button onclick="deleteTodo(2)">Delete</button>
-    </div>
-  </div>
-  <div>
-    <input id="inp" type="text">
-    <button onclick="addTodo()">Add Todo</button>
-  </div>
+            <div>
+                  <input type = "text"></input>
+                  <button onclick="AddTodo()">Add Todo!</button>
+            </div>
 
-  <script>
-    let currentIndex = 3;
+            <script>
+                  let currentIndex = 3 ;
 
-    function addTodo() {
-      const inputEl = document.getElementById("inp");
-      const todoText = inputEl.value.trim();
+                  function AddTodo(){
+                        const inputEL = document.getElementById("input") ;
+                        const value = inputEL.value;
 
-      if (todoText === '') {
-        alert('Please enter a todo item.');
-        return;
-      }
+                        //error managment
+                        if(todoText ===""){
+                              alert('please enter a todo item');
+                              return;
+                        }
 
-      const parentEl = document.getElementById("todos");
+                        const paretEl = document.getElementById("todos");
+                        
+                        //create new todo div
+                        const newDivEl = document.createElement("div");
+                        newDivEl.setAttribute("id",'todo-' + currentIndex);
 
-      // Create new todo div
-      const newTodo = document.createElement('div');
-      newTodo.setAttribute("id", 'todo-' + currentIndex);
+                        //create new heading element
+                        const newHeading = document.getElementById('h4');
+                        newHeading.textContent = currentIndex + '.' + todoText;
 
-      // Create new heading element
-      const newHeading = document.createElement('h4');
-      newHeading.textContent = currentIndex + '. ' + todoText;
+                        //Append elements to new todo div 
+                        newTodo.appendChild(newHeading);
+                        newTodo.appendChild(newButton);
 
-      // Create new button element
-      const newButton = document.createElement('button');
-      newButton.textContent = 'Delete';
-      newButton.setAttribute("onclick", "deleteTodo(" + currentIndex + ")");
+                        //Append new todo to the parent element 
+                        paretEl.appendChild(newTodo);
 
-      // Append elements to the new todo div
-      newTodo.appendChild(newHeading);
-      newTodo.appendChild(newButton);
+                        //increment the index for the next todo item
+                        currentIndex++;
 
-      // Append new todo to the parent element
-      parentEl.appendChild(newTodo);
+                        //clear the input feild
+                        inputEL.value="";
+                  }
 
-      // Increment the index for the next todo item
-      currentIndex++;
-
-      // Clear the input field
-      inputEl.value = '';
-    }
-
-    function deleteTodo(index) {
-      const element = document.getElementById("todo-" + index);
-      if (element) {
-        element.parentNode.removeChild(element);
-      }
-    }
-  </script>
-</body>
-
+                  function DeleteTodo(index){
+                        const element = document.getElementById("todo-" + index);
+                        if (element){
+                              element.parentNode.removeChild(element);
+                        }
+                  }
+            </script>
+      </body>
 </html>
+
+
+
+
+<!--
+      points to be noted - 
+      1. Add Todo()
+           take input -> store in an container vaulue -> make a new div element -> 
+      -->
 
 
 
