@@ -1,12 +1,12 @@
 <html>
       <body>
-            <input type = "text" ></input>
+            <input type = "text"></input>
             <button onclick="AddTodo()">Add Todo!</button>
       </body>
 
       <script>
+            let ctr = 1;
 
-            let ctr = 1; 
             function DeleteTodo(index){
                   const element = document.getElementById(index);
                   element.parentNode.removeChild(element);
@@ -14,13 +14,12 @@
 
             function AddTodo(){
 
-                  const inputEl = document.querySelector("input");
-                  const value = inputEl.value;
+                  const inputEL = document.querySelector("input");
+                  const value = inputEL.value;
 
                   const newDivEl = document.createElement("div");
                   newDivEl.setAttribute("id",ctr);
-
-                  newDivEl.innerHTML = "<div>" + value + '</div><button onclick = "DeleteTodo('+ ctr +')">delete</button>';
+                  newDivEl.innerHTML = "<div>" + value + '</div><button onclick="DeleteTodo('+ ctr +')">delete</button>';
 
                   document.querySelector("body").appendChild(newDivEl);
 
