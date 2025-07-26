@@ -1,32 +1,32 @@
 <html>
       <body>
-            <input type = "text"></input>
-            <button onclick="AddTodo()">Add Todo !</button>
-
-            <script>
-
-                  ctr = 1;
-                  function DeleteTodo(index){
-                        const element = document.getElementById(index);
-                        element.parentNode.removeChild(element);
-                  }
-
-
-                  function AddTodo(){
-                        const inputEl = document.querySelector("input");
-                        const value = inputEl.value;
-
-                        const newDiv = document.createElement("div");
-                        newDiv.setAttribute("id",ctr);
-
-                        newDiv.innerHTML = "<div>" + value + '</div><button onclick = "DeleteTodo('+ ctr +')">Delete</button>';
-
-                        document.querySelector("body").appendChild(newDiv);
-
-                        ctr = ctr + 1; 
-                  }
-            </script>
+            <input type = "text" ></input>
+            <button onclick="AddTodo()">Add Todo!</button>
       </body>
+
+      <script>
+
+            let ctr = 1; 
+            function DeleteTodo(index){
+                  const element = document.getElementById(index);
+                  element.parentNode.removeChild(element);
+            }
+
+            function AddTodo(){
+
+                  const inputEl = document.querySelector("input");
+                  const value = inputEl.value;
+
+                  const newDivEl = document.createElement("div");
+                  newDivEl.setAttribute("id",ctr);
+
+                  newDivEl.innerHTML = "<div>" + value + '</div><button onclick = "DeleteTodo('+ ctr +')">delete</button>';
+
+                  document.querySelector("body").appendChild(newDivEl);
+
+                  ctr = ctr + 1 ;
+            }
+      </script>
 </html>
 <!--  querySelector - used for specific usecase.
       quertSelectorAll - used to select all the usecaes of a specific branch. -->
