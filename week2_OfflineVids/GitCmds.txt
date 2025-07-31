@@ -30,7 +30,7 @@ to make a new orgin and push a fresh commit ----------->
 
 🪜 STEP 5: Connect to Your GitHub Repo
 
-        git remote add origin https://github.com/yout-user-name/repository-name.git
+        git remote add origin https://github.com/your-user-name/repository-name.git
 
 🪜 STEP 6: Push to GitHub (first acess main ranch then add the file to it)
 
